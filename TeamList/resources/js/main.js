@@ -8,9 +8,15 @@ readyBtn.addEventListener("click", grabTeamNames);
 
 function addItem() {
 noOfTeams += 1;
+noOfPlayers += 2;
 var listItem = document.createElement("li");
-listItem.innerHTML = `<input class="teamNames" value='Item ${noOfTeams}'></input>
-                      <img class='deleteBtn' id='deleteBtn_${noOfTeams}' src='./resources/images/crossButton.jpg'/>`;
+listItem.innerHTML = `<input class="teamNames" value='Team ${noOfTeams}'></input>
+                      <img class='deleteBtn' id='deleteBtn_${noOfTeams}' src='./resources/images/crossButton.jpg'/>
+                      <div class='playerContainer'>
+                      <input class='playerNames' value='Enter Player name 1'/>
+                      <input class='playerNames' value='Enter Player name 2'/>
+                      <button id='addPlayer_${noOfPlayers}'>Add player to Team</button>
+                      </div>`;
 document.getElementById('list').appendChild(listItem);
 var buttonDelete = document.getElementById(`deleteBtn_${noOfTeams}`);
 buttonDelete.addEventListener("click", deleteItem);
