@@ -1,7 +1,10 @@
 window.onload = function() {
 
+// add Item button can add children
 addItemBtn.addEventListener("click", addItem);
-readyBtn.addEventListener("click", begin);
+
+// getting team names as long as more than 2 are created
+readyBtn.addEventListener("click", grabTeamNames);
 
 function addItem() {
 noOfTeams += 1;
@@ -19,9 +22,10 @@ function deleteItem() {
   noOfTeams -= 1;
 }
 
-function begin() {
+function grabTeamNames() {
   if(noOfTeams < 2) {
     alert("You have to have at least two teams");
+    return;
   } else {
     var teamNamesObject = document.querySelectorAll('.teamNames');
     for(i=0; i < teamNamesObject.length; i++) {
