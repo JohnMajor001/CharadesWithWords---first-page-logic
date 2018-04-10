@@ -64,13 +64,32 @@ function deleteItem() {
 
 function grabTeamNames() {
   if(noOfTeams < 2) {
-    alert("You have to have at least two teams");
+    alert("You must have at least two teams");
     return;
   } else {
-    var teamNamesObject = document.querySelectorAll('.teamNames');
-    for(i=0; i < teamNamesObject.length; i++) {
-      teamNamesArray.push(teamNamesObject[i].value);
+    //create arrays of team names and player names
+    var teamNames = document.querySelectorAll('.teamNames');
+    var playerNames = document.querySelectorAll('.playerNames');
+    for(i=0; i < teamNames.length; i++) {
+      teamNamesArray.push(teamNames[i].value);
     }
+    for(i=0; i < playerNames.length; i++) {
+      playerNamesArray.push(playerNames[i].value);
+    }
+
+    //create team Objects
+    for(i=0; i <= noOfTeams; i++) {
+      var j = i + 1;
+      var team = new Object();
+      team.name = teamNamesArray[i];
+      team.numberOfPlayers = list.children[i].querySelector('div').children.length;
+      team.playerNames = [];
+      for(var indexHere = 0; indexHere < team.numberOfPlayers; indexHere++) {
+        team.playerNames.push(playerNamesArray[indexHere]);
+      }
+
+    }
+
   }
 }
 

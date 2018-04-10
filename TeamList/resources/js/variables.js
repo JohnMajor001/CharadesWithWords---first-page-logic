@@ -4,8 +4,14 @@ var addItemBtn = document.getElementById('addItemBtn');
 var list = document.getElementById('list');
 var readyBtn = document.getElementById('readyBtn');
 var teamNamesArray = [];
+var playerNamesArray = [];
 
-
+/*function team(playerNames, numberOfPlayers, score, position) {
+  this.playerNames = playerNames;
+  this.numberOfPlayers = numberOfPlayers;
+  this.score = score;
+  this.position = position;
+}*/
 
 
 
@@ -14,5 +20,4 @@ var teamNamesArray = [];
       Put 'X' at side of each third player box to deleteBtn
       do the same for team actually*/
 
-// If you add teams, delete some, then add some - identical ids end up being created
-// making some with identical ids as a result then it all goes to poop
+// Organise arrays of player Names in accordance with relevant Team Names
