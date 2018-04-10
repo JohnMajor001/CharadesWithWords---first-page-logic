@@ -4,7 +4,9 @@
 //                  what catagory is coming up
 //
 
-function roundPrep() {
+function roundPrep(team) {
   // readyBtn.addEventListener('click', roundBegin);
-  
+  //var heading = document.createElement('h1');
+  //var body = ``;
+  alert(team.name);
 }

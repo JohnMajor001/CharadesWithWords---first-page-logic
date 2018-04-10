@@ -103,7 +103,9 @@ function grabTeamNames() {
     list.removeChild(list.firstChild);
   }
   addItemBtn.innerHTML = 'Rules';
+  addItemBtn.removeEventListener('click', addItem);
+  // addItemBtn.addEventListener('click', rules);
   readyBtn.removeEventListener("click", grabTeamNames);
-  roundPrep();
+  roundPrep(teamObjectsArray[0]);
   }
 }
