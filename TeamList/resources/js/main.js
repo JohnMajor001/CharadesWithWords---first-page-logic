@@ -77,12 +77,8 @@ function grabTeamNames() {
       playerNamesArray.push(playerNames[i].value);
     }
 // alert each team followed by how many players then each player's name
-
-
-
-    // loop through playerNamesArray form new array
-
-    //create team Objects
+// loop through playerNamesArray form new array
+//create team Objects
     for(i=0; i < noOfTeams - 1; i++) {
 var numberOfPlayers = list.children[0].querySelector('div').children.length;
 var specificTeamPlayerNames = [];
@@ -96,10 +92,17 @@ for(var k=numberOfPlayers - 1; k >= 0; k--) {
         players: specificTeamPlayerNames,
         score: 0,
         position: 1,
+        whoseGo: 0,
       };
     }
 
     }
 console.log(teamObjectsArray);
+// various aspects of page to turn blank
+// remove event listener from ready button and change innerHTML to start Game
+// page loads with: what Team is playing
+//                  whose turn it is
+//                  what catagory is coming up
+//
   }
 }
