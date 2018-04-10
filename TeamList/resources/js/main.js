@@ -76,24 +76,30 @@ function grabTeamNames() {
     for(i=0; i < playerNames.length; i++) {
       playerNamesArray.push(playerNames[i].value);
     }
+// alert each team followed by how many players then each player's name
+
+
+
+    // loop through playerNamesArray form new array
 
     //create team Objects
-    for(i=0; i <= noOfTeams; i++) {
-      var j = i + 1;
-      var team = new Object();
-      team.name = teamNamesArray[i];
-      team.numberOfPlayers = list.children[i].querySelector('div').children.length;
-      team.playerNames = [];
-      for(var indexHere = 0; indexHere < team.numberOfPlayers; indexHere++) {
-        team.playerNames.push(playerNamesArray[indexHere]);
-      }
+    for(i=0; i < noOfTeams - 1; i++) {
+var numberOfPlayers = list.children[0].querySelector('div').children.length;
+var specificTeamPlayerNames = [];
 
+for(var k=numberOfPlayers - 1; k >= 0; k--) {
+  specificTeamPlayerNames.push(playerNamesArray[k]);
+  playerNamesArray.splice(k, 1);
+}
+      teamObjectsArray[i] = {
+        name: teamNamesArray[i],
+        players: specificTeamPlayerNames,
+        score: 0,
+        position: 1,
+      };
     }
 
+    }
+console.log(teamObjectsArray);
   }
-}
-
-
-
-
 }

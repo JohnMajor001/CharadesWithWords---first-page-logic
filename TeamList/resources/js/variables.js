@@ -5,6 +5,8 @@ var list = document.getElementById('list');
 var readyBtn = document.getElementById('readyBtn');
 var teamNamesArray = [];
 var playerNamesArray = [];
+var teamObjectsArray = [];
+
 
 /*function team(playerNames, numberOfPlayers, score, position) {
   this.playerNames = playerNames;
