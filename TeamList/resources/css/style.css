@@ -41,12 +41,22 @@ li {
   color: white;
   font-size: 1rem;
 }
+.addPlayerBtn {
+  cursor: pointer;
+  width: 20rem;
+  height: 3rem;
+  font-size: 1.5rem;
+  color: white;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  background-color: rgba(56, 255, 95, 0.3);
+}
 input::placeHolder {
   font-size: 1rem;
   color: white;
   opacity: 0.6;
 }
-.deleteBtn {
+.deleteBtn  {
   height: 2rem;
   width: 2.5rem;
   cursor: pointer;
