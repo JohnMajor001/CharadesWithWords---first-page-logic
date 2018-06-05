@@ -1,0 +1,305 @@
+html {
+  font-size: 16px;
+  background-image: url('../images/backgroundVerbalise.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+canvas {
+      background: black;
+      position: absolute;
+    }
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  font-size: 3rem;
+  padding: 2rem 0;
+  text-shadow:
+  -1px -1px 0 black,
+  1px -1px 0 black,
+  -1px 1px 0 black,
+  1px 1px 0 black;
+}
+p {
+  margin-top: 0;
+}
+/* For Hiding elements temporarily e.g. during a round phase */
+.hidden {
+  display: none;
+  opacity: 0;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+
+/* Error messages */
+#errorMessageContainer-two-teams, #errorMessages-team-names, #errorMessages-player-names {
+  top:0;
+  right:0;
+  padding: 0.5rem;
+  margin: 1rem 1rem 0 0;
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  color: #5b0a0a;
+  text-shadow:
+  -1px -1px 0 white,
+  1px -1px 0 white,
+  -1px 1px 0 white,
+  1px 1px 0 white;
+  background-image:
+    linear-gradient(
+      to right,
+      red,
+      #f06d06,
+      rgb(255, 255, 0),
+      green
+    );
+    border-radius: 50%;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+#errorMessageContainer-two-teams, #errorMessages-team-names,
+ #errorMessages-player-names, .errorMessages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.errorMessages {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-family: 'Luckiest Guy', helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+/* Rules and settings */
+.roundTextContainer {
+  height:12rem;
+  padding: 1rem 0;
+  z-index: 2;
+}
+#rulesContent p, #rulesContent {
+  text-align: center;
+  font-size: 2rem;
+}
+.rulesAppear {
+  position:absolute;
+  z-index: 1;
+  background-image: url('./resources/images/rulesBackground.jpg');
+  width: 60rem;
+}
+#settingsContent, #rulesContent h1, h1, .num, .statsTable th, .btn,
+  .finalTable th {
+    font-family: 'Luckiest Guy', helvetica, sans-serif;
+  }
+#rulesContent h1 {
+  font-size: 2rem;
+}
+#rulesContent p, #rulesContent li, input {
+  font-family: 'Architects Daughter', helvetica, sans-serif;
+}
+.rulesList li {
+  list-style-type: circle;
+}
+#settingsContent {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.rulesArrows {
+  max-width: 2rem;
+  max-height: 2rem;
+}
+#rulesContent {
+  padding: 1rem;
+}
+.rules-bottom-bar, #rules-bottom-bar-right, .settings-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.settings-row {
+  padding: 0.5rem;
+}
+#rules-bottom-bar-right {
+  width: 5rem;
+}
+.rulesArrows {
+  cursor: pointer;
+}
+/*End of rules and settings */
+
+li {
+  display: flex;
+  align-items: center;
+  font-family: 'Luckiest Guy', helvetica, sans-serif;
+}
+/* Really the logo */
+#mainTitle {
+  width: 20rem;
+  padding:0;
+  margin:0;
+  float: left;
+}
+#wholeContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*div for whole game section */
+
+#game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center
+  height: 100%;
+}
+.btn {
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
+  background-color: rgb(234, 93, 11);
+  border-radius: 2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f7f700;
+  text-shadow:
+  -1px -1px 0 black,
+  1px -1px 0 black,
+  -1px 1px 0 black,
+  1px 1px 0 black;
+  -webkit-transition: all 100ms; /* Safari */
+  transition: all 100ms;
+}
+.btn:hover, #saveSettings:hover {
+  background-color: #46036d;
+  transform: scale(1.1);
+}
+.initialBtn {
+  width: 10rem;
+  height: 3rem;
+}
+
+.teamBtn {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  background-color: rgba(247, 255, 248, 0.1);
+  -webkit-background-color: rgba(247, 255, 248, 0.1);
+  -moz-background-color: rgba(247, 255, 248, 0.1);
+  height: 2rem;
+  border: none;
+  border-bottom: 2px solid black;
+  padding: 0.5rem 0;
+  margin: 0;
+}
+ input {
+  background-color: rgba(247, 255, 248, 0.5);
+  height: 2rem;
+  width: 10rem;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 1rem;
+}
+input:focus, button:focus {
+  outline: 0;
+}
+.addPlayerBtn {
+  width: 20rem;
+  height: 3rem;
+}
+input::placeHolder {
+  font-size: 1em;
+  font-weight: 400;
+}
+.deleteBtn, .helpBtn  {
+  height: 2rem;
+  width: 2.5rem;
+  cursor: pointer;
+}
+.deleteBtn {
+  margin-left: 0.5rem;
+}
+.addItemBtn {
+  height:3rem;
+  width:3rem;
+  cursor: pointer;
+}
+#list {
+  font-size: 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#list li {
+  display: flex;
+  align-items: center;
+}
+.roundText, .noMorePassesSpan {
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Luckiest Guy', helvetica, sans-serif;
+}
+.teamNames, .playerContainer {
+  margin-right: 0.5rem;
+}
+.teamColor {
+  color: blue;
+}
+.categoryColor {
+  color: teal;
+}
+.describerColor, .noMorePassesSpan {
+  color: orange;
+}
+.noMorePassesSpan, .winnersText {
+    text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}
+.winnersText {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+#helpContentID, .drinkTextBox {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.drinkTextBox {
+  max-width: 70%;
+}
+#helpContentID span, .drinkTextBox p {
+  font-family: 'Architects Daughter', helvetica, sans-serif;
+}
+#saveSettings {
+	background: #e52806;
+  color: #23ff2e;
+}

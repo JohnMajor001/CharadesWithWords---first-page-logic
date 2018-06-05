@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verbalise</title>
+  <link type="text/css" rel="stylesheet" href="./resources/css/reset.css">
+  <link type="text/css" rel="stylesheet" href="./resources/css/style.css">
+  <link type='text/css' rel='stylesheet' href='./resources/css/321animation.css'>
+  <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Glegoo|Luckiest+Guy|Press+Start+2P" rel="stylesheet">
+  <link rel="shortcut icon" type="image/png" href="./resources/images/sprayPaintLogo.jpg"/>
+</head>
+<body>
+    <!-- Error messages -->
+  <div class='hidden' id='errorMessageContainer-two-teams'>
+    <div class='errorMessages' id='errorMessages-two-teams'>
+    </div>
+  </div>
+  <div class='hidden' id='errorMessageContainer-team-names'>
+    <div class='errorMessages' id='errorMessages-team-names'>
+    </div>
+  </div>
+  <div class='hidden' id='errorMessageContainer-player-names'>
+    <div class='errorMessages' id='errorMessages-player-names'>
+    </div>
+  </div>
+  <div id='wholeContainer'>
+      <!-- <h1 class="mainTitle" id='topTitle'>Verbalise</h1> -->
+      <img id='mainTitle' src='./resources/images/VerbaliseLogoFinal.png'/>
+    <!-- Rules -->
+    	<div class="hidden" id='modal'>
+        <div id='modal-container'>
+          	<p id='rulesContent'></p>
+          	<div class='rules-bottom-bar' id='rules-bottom-bar'>
+          		<img src='./resources/images/crossButton.jpg' id='closeRules'/>
+          		<div id='rules-bottom-bar-right'>
+          			<img id='nextArrow' src='./resources/images/nextArrow.png' alt='An Arrow'/>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+    <!-- Settings-->
+      <div class="hidden" id='settings-modal'>
+        <div id='settings-container'>
+            <div id='settingsContent'></div>
+            <div class='settings-row'>
+              <img class='deleteBtn' src='./resources/images/crossButton.jpg' id='closeSettings'/>
+              <button class="btn initialBtn" type="button" id="saveSettings">Start!</button>
+            </div>
+        </div>
+      </div>
+    <!-- Game -->
+    <div id='game'>
+      <button class="btn initialBtn" type="button" id="rules">Rules</button>
+      <button class="btn initialBtn" type="button" id="addItemBtn">Add Team</button>
+      <div id='list'></div>
+      <input class='hidden' id="computer" maxlength="4"></input>
+      <button class="btn initialBtn" id="readyBtn">Ready!</button>
+    </div>
+  </div>
+<script src="./resources/js/variables.js"></script>
+<script src='./resources/js/boardAnimation.js'></script>
+<script src='./resources/js/settings.js'></script>
+<script src='./resources/js/rules.js'></script>
+<script src="./resources/js/setUp.js"></script>
+<script src="./resources/js/round.js"></script>
+</body>
+</html>

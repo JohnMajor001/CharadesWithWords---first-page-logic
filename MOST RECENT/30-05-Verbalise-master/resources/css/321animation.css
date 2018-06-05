@@ -1,0 +1,86 @@
+.num {
+	font-size: 2rem;
+	transform: scale(0);
+	animation-name: numGrow;
+	animation-duration: 1s;
+	-webkit-transform: scale(0);
+	-webkit-animation-name: numGrow;
+	-webkit-animation-duration: 1s;
+	-moz-transform: scale(0);
+	-moz-animation-name: numGrow;
+	-moz-animation-duration: 1s;
+	position: absolute;
+	top: 50%;
+}
+.two {
+	animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	-webkit-animation-delay: 1s;
+}
+.three {
+	animation-delay: 2s;
+	-moz-animation-delay: 2s;
+	-webkit-animation-delay: 2s;
+}
+.Go {
+	animation-delay: 3s;
+	-moz-animation-delay: 3s;
+	-webkit-animation-delay: 3s;
+}
+
+@keyframes numGrow{
+	from{transform: scale(0)}
+	to{transform: scale(4)}
+}
+@-moz-keyframes numGrow{
+	from{transform: scale(0)}
+	to{transform: scale(4)}
+}
+@-webkit-keyframes numGrow{
+	from{transform: scale(0)}
+	to{transform: scale(4)}
+}
+
+/* Stats Table */
+.statsTable {
+	width: 70%;
+}
+.statsTable th, .finalTable th {
+	min-width: 20rem;
+	font-size: 1.5rem;
+	padding: 0.5rem 1rem;
+	height: 3.5rem;
+}
+.finalTable td {
+	min-width: 20rem;
+}
+.describeText, .statsTable td, .finalTable td, .settings-row span {
+	font-family: 'Architects Daughter', cursive;
+}
+.describeText {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 1rem;
+	height: 10rem;
+}
+#spanWithWordToDescribe {
+	font-size: 3rem;
+}
+/* Final Table */
+.finalTable {
+	width: 100%;
+	text-align: center;
+}
+.finalTable th {
+	height: 3rem;
+	padding: 0.5rem 0;
+}
+.finalTable tr {
+	display: flex;
+}
+.finalTable td {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
