@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Verbalise</title>
+  <link type="text/css" rel="stylesheet" href="./resources/css/reset.css">
+  <link type="text/css" rel="stylesheet" href="./resources/css/style.css">
+  <link type='text/css' rel='stylesheet'
+  href='./resources/css/321animation.css'>
+  <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Glegoo|Luckiest+Guy|Press+Start+2P"
+    rel="stylesheet">
+  <link rel="shortcut icon" type="image/png"
+    href="./resources/images/sprayPaintLogo.jpg"/>
+</head>
+<body>
+    <!-- Error messages -->
+    <!-- Error for not having at least two teams -->
+  <div class='hidden' id='errorMessageContainer-two-teams'>
+    <div class='errorMessages' id='errorMessages-two-teams'>
+    </div>
+  </div>
+
+    <!-- Error for not having team names -->
+  <div class='hidden' id='errorMessageContainer-team-names'>
+    <div class='errorMessages' id='errorMessages-team-names'>
+    </div>
+  </div>
+
+    <!-- Error for not having player names-->
+  <div class='hidden' id='errorMessageContainer-player-names'>
+    <div class='errorMessages' id='errorMessages-player-names'>
+    </div>
+  </div>
+  <!-- End of Error Messages -->
+
+  <!-- Main content -->
+  <div id='wholeContainer'>
+    <div id='mainTitle'>
+      <h1 style='text-align: center; color: yellow'>Verbalise</h1>
+      <!-- <img src='./resources/images/VerbaliseLogoFinal.png'/> -->
+    </div>
+
+    <!-- Rules -->
+      <div class='hideNow' id='rules-container'>
+        	<div id='rulesContent'></div>
+        	<div class='rules-bottom-bar' id='rules-bottom-bar'>
+        		<img src='./resources/images/x_delete_button.png' id='closeRules'/>
+        		<div id='rules-bottom-bar-right'>
+        			<img id='nextArrow' src='./resources/images/nextArrow.png'
+               alt='An Arrow'/>
+    			  </div>
+    		  </div>
+      </div>
+
+    <!-- Settings-->
+    <div class='hideNow' id='settings-container'>
+        <div id='settingsContent'></div>
+        <div class='settings-row'>
+          <img class='deleteBtn' src='./resources/images/x_delete_button.png'
+          id='closeSettings'/>
+          <button class="btn initialBtn" type="button"
+          id="saveSettings">Start!</button>
+        </div>
+    </div>
+
+
+    <!-- Game Content itself-->
+    <div id='game'>
+      <button class="btn initialBtn" type="button"
+      id="rules">How to Play</button>
+      <button class="btn initialBtn" type="button"
+      id="addItemBtn">Begin!</button>
+      <div id='list'></div>
+      <input class='hideNow' id="computer" maxlength="4"></input>
+      <button class="hideNow" id="readyBtn">Play!</button>
+    </div>
+    <!-- End of whole container div -->
+  </div>
+<script src="./resources/js/variables.js"></script>
+<script src='./resources/js/settings.js'></script>
+<script src='./resources/js/rules.js'></script>
+<script src="./resources/js/setUp.js"></script>
+<script src="./resources/js/round.js"></script>
+</body>
+</html>
