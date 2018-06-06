@@ -1,0 +1,701 @@
+html {
+  /* border-left: 2rem groove #3e0056;
+  border-right: 2rem groove #3e0056; */
+  padding: 1rem 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  background-image:
+  url('../images/backgroundVerbalise.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+canvas {
+  width: 60%;
+  height: 100%;
+}
+
+/* Main Container */
+#wholeContainer {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Really the logo although it's named title */
+#mainTitle {
+  min-height: 7rem;
+  max-height: 20rem;
+  width: 20rem;
+  padding:0;
+  margin:0;
+}
+
+/*div for game content section */
+#game {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#list {
+  margin: 2rem 0;
+  font-size: 2rem;
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#list li {
+  display: flex;
+  align-items: center;
+}
+
+
+h1 {
+  font-size: 3rem;
+  padding: 2rem 0;
+  text-shadow:
+  -1px -1px 0 black,
+  1px -1px 0 black,
+  -1px 1px 0 black,
+  1px 1px 0 black;
+}
+p {
+  margin-top: 0;
+}
+/* For Hiding elements temporarily
+ e.g. settings during a round phase */
+.hidden {
+  display: none;
+  opacity: 0;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+/* For when we want to immediately hide something */
+.hideNow {
+  display: none !important;
+  position: absolute !important;
+  top: 0;
+  margin-top: -500rem;
+}
+
+/* Error messages */
+#errorMessageContainer-two-teams,
+#errorMessages-team-names,
+#errorMessages-player-names {
+  top:0;
+  right:0;
+  padding: 0.5rem;
+  margin: 3rem 3rem 0 0;
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  color: #5b0a0a;
+  text-shadow:
+  -1px -1px 0 white,
+  1px -1px 0 white,
+  -1px 1px 0 white,
+  1px 1px 0 white;
+  background-image:
+    linear-gradient(
+      to right,
+      red,
+      #f06d06,
+      rgb(255, 255, 0),
+      green
+    );
+    border-radius: 50%;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
+  transition: opacity .25s ease-in-out;
+  -moz-transition: opacity .25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out;
+}
+#errorMessageContainer-two-teams,
+#errorMessages-team-names,
+#errorMessages-player-names,
+.errorMessages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.errorMessages {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-family: 'Luckiest Guy', helvetica, sans-serif;
+  font-size: 1rem;
+}
+@media (max-width: 500px) {
+  #errorMessageContainer-two-teams,
+  #errorMessages-team-names,
+  #errorMessages-player-names {
+    margin: 17rem 8rem 0 0;
+  }
+}
+@media (max-width: 400px) {
+  #errorMessageContainer-two-teams,
+  #errorMessages-team-names,
+  #errorMessages-player-names {
+    margin: 17rem 6rem 0 0;
+  }
+}
+@media (max-width: 350px) {
+  #errorMessageContainer-two-teams,
+  #errorMessages-team-names,
+  #errorMessages-player-names {
+    margin: 17rem 4rem 0 0;
+  }
+}
+/* Rules and settings */
+#saveSettings {
+	background: #e52806;
+  color: #23ff2e;
+}
+.roundTextContainer {
+  height:12rem;
+  padding: 1rem 0;
+  z-index: 2;
+}
+#rulesContent p {
+  text-align: center;
+  font-size: 4rem;
+}
+#rulesContent {
+  margin: 0 10rem;
+}
+.rulesAppear {
+  z-index: 1;
+  /* background-image:
+  url('../images/rulesBackground.jpg');
+  background-repeat: no-repeat;
+  background-size: cover; */
+  height: 85%;
+  width: 80%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#settingsContent,
+#rulesContent h1, h1, .num, .statsTable th, .btn,
+.finalTable th {
+    font-family:
+    'Luckiest Guy', helvetica, sans-serif;
+  }
+#rulesContent h1 {
+  text-shadow: 2px 0px 1px #3e0056, 3px 3px 5px blue;
+  font-size: 6rem;
+  color: #f7f700;
+}
+#rulesContent p {
+  font-size: 2.5rem;
+}
+#rulesContent p, #rulesContent li, input {
+  font-family:
+  'Architects Daughter', helvetica, sans-serif;
+}
+.rulesList li {
+  list-style-type: circle;
+  text-align: center;
+}
+#settingsContent {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.rulesArrows {
+  max-width: 2rem;
+  max-height: 2rem;
+}
+#rulesContent {
+  padding: 3rem 1rem 1rem 1rem;
+}
+.rules-bottom-bar,
+#rules-bottom-bar-right, .settings-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.settings-row {
+  padding: 0.5rem;
+}
+#rules-bottom-bar-right {
+  width: 10rem;
+}
+#nextArrow {
+  height: 5rem;
+  width: 10rem;
+}
+.rulesArrows {
+  cursor: pointer;
+}
+#rulesContentDivForGreenWords {
+  text-align: center;
+  color: green;
+}
+#rulesContentDivForRedWords {
+  text-align: center;
+  color: #6d0404;
+}
+#alignGreenLeft p, #alignRedLeft p {
+  text-align: left;
+}
+/* Media Queries - rules and Settings */
+@media only screen and (max-width: 1180px) {
+  #rulesContent h1 {
+    font-size: 4rem;
+  }
+  #rulesContent p {
+    font-size: 1.7rem;
+  }
+}
+@media only screen and (max-width: 889px) {
+  #rulesContent h1 {
+    font-size: 3rem;
+  }
+  #rulesContent p {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 720px) {
+  .rulesAppear, #rulesContent {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #rulesContent {
+    margin: 0;
+    padding: 0 1rem;
+  }
+}
+@media only screen and (max-width: 545px) {
+  #list {
+    height: 100%;
+  }
+  #rulesContent {
+    width: 90%;
+  }
+  #rulesContent p {
+    line-height: 1.5;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  #settingsContent {
+    padding-left: 1rem;
+  }
+  #settingsContent h1 {
+    text-align: center;
+  }
+  .settings-row {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+  }
+  .settings-row .btn {
+    width: 100%;
+  }
+   #bottomRowSettings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+   #list .roundTextContainer {
+    padding-left: 1rem;
+  }
+}
+@media only screen and (max-width: 700px) {
+   #list .roundText {
+    font-size: 1.7rem;
+  }
+}
+/* Settings Media */
+/*End of rules and settings */
+
+/* Stats Table */
+.statsTable {
+	width: 70%;
+}
+.statsTable th, .finalTable th {
+	min-width: 20rem;
+	font-size: 1.5rem;
+	padding: 0.5rem 1rem;
+	height: 3.5rem;
+}
+.finalTable td {
+	min-width: 20rem;
+}
+.describeText, .statsTable td, .finalTable td, .settings-row span {
+	font-family: 'Architects Daughter', cursive;
+}
+.describeText {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 1rem;
+	height: 10rem;
+}
+#spanWithWordToDescribe {
+	font-size: 3rem;
+}
+
+ #list div h1 {
+    font-size: 2rem;
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+  .currentStandingsFiller {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .currentStandingsFiller,
+  #list div span {
+    font-family:
+    'Architects Daughter', helvetica, sans-serif;
+  }
+  #list div span {
+    text-align: center;
+    width: 100%;
+  }
+/* Stats Table Media Queries */
+@media only screen and (max-width: 700px) {
+  #list .statsTable {
+    width:10rem;
+    padding: 0;
+  }
+  #list .statsTable th,
+  #list .statsTable td {
+  	min-width: 4rem;
+  	font-size: 1.3rem;
+  	padding: 0.5rem;
+  	height: 2rem;
+  }
+
+/* Current standings media */
+ 
+  #list .statsTable {
+    margin-left: -7rem;
+  }
+
+/* Canvas */
+  canvas {
+    width: 45rem;
+    height: 20rem;
+  }
+}
+@media only screen and (max-width: 1400px) {
+
+}
+
+li {
+  display: flex;
+  align-items: center;
+  font-family:
+  'Luckiest Guy', helvetica, sans-serif;
+}
+
+/* BUTTONS! */
+.btn {
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
+  background-color: rgb(234, 93, 11);
+  border-radius: 2rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f7f700;
+  text-shadow:
+  -1px -1px 0 black,
+  1px -1px 0 black,
+  -1px 1px 0 black,
+  1px 1px 0 black;
+  -webkit-transition: all 100ms; /* Safari */
+  transition: all 100ms;
+}
+.btn:hover, #saveSettings:hover {
+  background-color: #46036d;
+  transform: scale(1.1);
+}
+.initialBtn {
+  width: 20rem;
+  height: 3rem;
+}
+.deleteBtn, .helpBtn  {
+  height: 2rem;
+  width: 2.5rem;
+  cursor: pointer;
+}
+.deleteBtn {
+  margin-left: 0.5rem;
+}
+.addItemBtn {
+  height:3rem;
+  width:3rem;
+  cursor: pointer;
+}
+.addPlayerBtn {
+  width: 20rem;
+  height: 3rem;
+}
+.teamBtn {
+  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+  background-color: rgba(247, 255, 248, 0.1);
+  -webkit-background-color: rgba(247, 255, 248, 0.1);
+  -moz-background-color: rgba(247, 255, 248, 0.1);
+  height: 2rem;
+  border: none;
+  border-bottom: 2px solid black;
+  padding: 0.5rem 0;
+  margin: 0;
+}
+/* End of Buttons */
+
+/* Js media query for when team numbers get too high */
+.list_js_media_query input{
+  height: 1rem;
+}
+.list_js_media_query .deleteBtn {
+  height: 1rem;
+  width: 1rem;
+}
+.list_js_media_query .addPlayerBtn {
+  height: 2rem;
+  font-size: 1rem;
+}
+
+/* Super js media query */
+.list_js_media_query_super li {
+  height: 100%;
+}
+.list_js_media_query_super input,
+.list_js_media_query_super .playerContainer input {
+  width: 10rem;
+  height: 0.6rem;
+}
+.list_js_media_query_super .playerContainer li {
+  padding: 0.1rem;
+}
+.list_js_media_query_super .deleteBtn {
+  height: 0.6rem;
+  width: 0.6rem;
+}
+.list_js_media_query_super input::placeholder,
+.list_js_media_query_super input,
+.list_js_media_query_super .playerContainer input {
+  font-size: 0.8rem;
+}
+.list_js_media_query_super .addPlayerBtn {
+  height: 2rem;
+  width: 6rem;
+  font-size: 0.8rem;
+}
+
+/* Media queries for adding teams screen */
+/* Button media queries */
+@media (max-width: 928px) {
+  .addPlayerBtn {
+    width: 10rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 928px) {
+  .addPlayerBtn {
+    width: 10rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 800px) {
+  #list li {
+    margin-bottom: 1rem;
+  }
+  #list input {
+    width: 7rem;
+  }
+}
+@media (max-width: 900px) {
+  .list_js_media_query input{
+    height: 1rem;
+  }
+  .list_js_media_query .deleteBtn {
+    height: 1rem;
+    width: 1rem;
+  }
+  .list_js_media_query .addPlayerBtn {
+    height: 1.5rem;
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 500px) {
+  #list li .playerContainer,
+  #list li .playerContainer input {
+    width: 8rem;
+  }
+  #list .playerContainer {
+    margin-right: 2rem;
+  }
+  #list input{
+    height: 0.7rem;
+    font-size: 0.8rem;
+    width: 4rem;
+  }
+  #list input::placeholder {
+    font-size: 0.8rem;
+    text-align: center;
+    padding-left: 0.2rem;
+  }
+  #list .deleteBtn {
+    height: 0.7rem;
+    width: 0.7rem;
+  }
+  #list .addPlayerBtn {
+    height: 1.5rem;
+    font-size: 0.7rem;
+    width: 7rem;
+  }
+  .list_js_media_query_super li .playerContainer,
+  .list_js_media_query_super li .playerContainer input {
+    width: 8rem;
+    /* padding: 0.2rem; */
+  }
+  .list_js_media_query_super .playerContainer {
+    margin-right: 2rem;
+    height: 3rem;
+  }
+  .list_js_media_query_super input{
+    height: 0.7rem;
+    font-size: 0.8rem;
+    width: 4rem;
+  }
+  .list_js_media_query_super input::placeholder {
+    font-size: 0.6rem;
+    text-align: center;
+  }
+  .list_js_media_query_super .deleteBtn {
+    height: 0.7rem;
+    width: 0.7rem;
+  }
+  .list_js_media_query_super .addPlayerBtn {
+    height: 1.5rem;
+    font-size: 0.7rem;
+    width: 5rem;
+    /* margin-left: -10rem; */
+  }
+}
+@media (max-width: 400px) {
+  #list .addPlayerBtn {
+    width: 4rem;
+    padding: 0;
+  }
+  #list {
+    overflow: scroll;
+  }
+  #list li input, #list li .playerContainer input,
+  #list li input, #list li .playerContainer {
+    width: 5rem;
+  }
+}
+
+
+/* End of adding teams screen media queries */
+
+ input {
+  background-color: rgba(247, 255, 248, 0.5);
+  height: 2rem;
+  width: 10rem;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 1rem;
+}
+input:focus, button:focus {
+  outline: 0;
+}
+input::placeHolder {
+  font-size: 1em;
+  font-weight: 400;
+}
+.roundText, .noMorePassesSpan {
+  text-align: center;
+  font-size: 3rem;
+  font-family:
+  'Luckiest Guy', helvetica, sans-serif;
+}
+.teamNames, .playerContainer {
+  margin-right: 0.5rem;
+}
+/* Need to change these?
+ For specific team colors? */
+.teamColor {
+  color: blue;
+}
+.categoryColor {
+  color: teal;
+}
+.describerColor {
+  color: orange;
+}
+.noMorePassesSpan {
+  color: yellow;
+}
+.noMorePassesSpan, .winnersText {
+    text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+}
+.winnersText {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+#helpContentID, .drinkTextBox {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.drinkTextBox {
+  max-width: 70%;
+}
+#helpContentID span, .drinkTextBox p {
+  font-family:
+  'Architects Daughter', helvetica, sans-serif;
+}
